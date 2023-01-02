@@ -8,9 +8,9 @@ Banking [Spring Boot](http://projects.spring.io/spring-boot/) sample app.
 
 For building and running the application you need basic understanding of:
 
-- JDK 17
+- [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Maven 3](https://maven.apache.org)
-- Spring Boot 3.0
+- [H2 Database (In Memory)](https://www.h2database.com/html/main.html)
 
 ## Running the application locally
 
@@ -31,7 +31,9 @@ Application will be available at http://localhost:8080/banking-repository/swagge
 
 ## Default Admin User
 
-Using below credentials user will able to login to the system and add/remove account/user.
+Using below credentials user will able to login to the system and add/remove account/user. We are creating this user on
+application startup for the further operation. Normally, For the productive development, I would suggest to
+use `Flyway/Liquibase` for `DB migration/versioning`.
 
 ```
 Username: admin

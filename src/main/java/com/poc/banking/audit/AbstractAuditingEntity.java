@@ -4,7 +4,6 @@ import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +32,6 @@ public abstract class AbstractAuditingEntity {
     @CreatedDate
     private Instant createdAt;
 
-    @NotBlank
     @CreatedBy
     private String createdBy;
 
@@ -41,7 +39,6 @@ public abstract class AbstractAuditingEntity {
     @LastModifiedDate
     private Instant lastModifiedAt;
 
-    @NotBlank
     @LastModifiedBy
     private String lastModifiedBy;
 }

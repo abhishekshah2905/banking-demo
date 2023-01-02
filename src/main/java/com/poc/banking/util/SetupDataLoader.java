@@ -13,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
+import static com.poc.banking.util.AppConstants.*;
+
 @Component
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -36,11 +38,11 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         if (alreadySetup)
             return;
 
-        createRoleIfNotFound("ROLE_ADMIN");
-        createRoleIfNotFound("ROLE_ACCOUNT");
-        createRoleIfNotFound("ROLE_USER");
+        createRoleIfNotFound(ROLE_ADMIN);
+        createRoleIfNotFound(ROLE_ACCOUNT);
+        createRoleIfNotFound(ROLE_USER);
 
-        Authorities adminRole = authoritiesRepository.findByAuthority("ROLE_ADMIN");
+        Authorities adminRole = authoritiesRepository.findByAuthority(ROLE_ADMIN);
         UserEntity user = new UserEntity();
         user.setFirstName("ADMIN");
         user.setLastName("ADMIN");
